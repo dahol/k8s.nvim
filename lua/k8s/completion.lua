@@ -240,7 +240,7 @@ function M.setup()
   vim.api.nvim_set_var("k8s_complete", k8s_complete)
   
   -- Set up autocommands for YAML files
-  vim.api.nvim_create_autocmd("BufNewFile,BufRead", {
+  vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     pattern = "*.yaml",
     callback = function()
       if vim.api.nvim_buf_get_option(0, "buftype") == "" then
