@@ -7,6 +7,8 @@ A Neovim plugin for Kubernetes schema autocompletion.
 - YAML schema completion for Kubernetes manifests
 - Support for common Kubernetes object fields
 - Integration with Neovim's omnifunc system
+- Comprehensive support for Traefik, cert-manager, External Secrets, and HashiCorp Vault resources
+- Gateway API resource support
 
 ## Installation
 
@@ -28,34 +30,39 @@ The plugin automatically enables completion for `.yaml` files when you're editin
 
 ## Available completions
 
-- apiVersion
-- kind
-- metadata
-- spec
-- status
-- name
-- namespace
-- labels
-- annotations
-- selector
-- replicas
-- template
-- containers
-- image
-- ports
-- env
-- volumeMounts
-- volumes
-- configMaps
-- secrets
-- serviceAccountName
-- resources
-- requests
-- limits
-- hostAliases
-- nodeSelector
-- tolerations
-- affinity
+### Core Kubernetes Resources:
+- apiVersion, kind, metadata, spec, status
+- name, namespace, labels, annotations
+- selector, replicas, template
+- containers, image, ports, env
+- volumeMounts, volumes, configMaps, secrets
+- serviceAccountName, resources, requests, limits
+- hostAliases, nodeSelector, tolerations, affinity
+
+### Additional Kubernetes Resources:
+- service, deployment, statefulset, daemonset
+- replicaset, job, cronjob, persistentvolume
+- persistentvolumeclaim, ingress, networkpolicy
+- poddisruptionbudget, horizontalpodautoscaler
+
+### Traefik Resources:
+- middleware, ingressroute, ingressroutetcp
+- ingressrouteudp, tlsoption, traefikservice
+
+### cert-manager Resources:
+- certificate, certificaterequest, clusterissuer
+- issuer, order, challenge
+
+### External Secrets Resources:
+- externalsecret, secretstore, clustersecretstore
+
+### HashiCorp Vault Resources:
+- vaultdynamicsecret, vaultstaticsecret, vaultauth
+- vaultmount, vaultpolicy, vaulttoken
+
+### Gateway API Resources:
+- gateway, httproute, tcproute, udproute
+- referencegrant, gatewayclass
 
 ## Requirements
 
