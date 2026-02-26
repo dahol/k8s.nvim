@@ -9,6 +9,7 @@ A Neovim plugin for Kubernetes schema autocompletion.
 - Integration with Neovim's omnifunc system
 - Comprehensive support for Traefik, cert-manager, External Secrets, and HashiCorp Vault resources
 - Gateway API resource support
+- Command to list available Kubernetes resources
 
 ## Installation
 
@@ -27,6 +28,10 @@ Add to your Neovim configuration:
 ## Usage
 
 The plugin automatically enables completion for `.yaml` files when you're editing Kubernetes manifests.
+
+## Available Commands
+
+- `:K8sResources` - Display a list of available Kubernetes resources and fields for completion
 
 ## Available completions
 
