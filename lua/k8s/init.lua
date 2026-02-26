@@ -59,7 +59,8 @@ local function list_k8s_resources()
     height = 30,
     row = 5,
     col = 10,
-    style = "minimal"
+    style = "minimal",
+    border = "single"
   })
   
   -- Set buffer name and make it readonly
