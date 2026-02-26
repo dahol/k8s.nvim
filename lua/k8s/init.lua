@@ -1,4 +1,5 @@
 local M = {}
+local completion = require("k8s.completion")
 
 -- Function to list available Kubernetes resources
 local function list_k8s_resources()
@@ -80,16 +81,8 @@ function M.setup()
 	-- Create the command to list resources
 	vim.api.nvim_create_user_command("K8sResources", list_k8s_resources, {})
 
-	-- Set up autocommands for YAML files to enable completion
-	vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-		pattern = "*.yaml",
-		callback = function()
-			if vim.api.nvim_buf_get_option(0, "buftype") == "" then
-				-- Enable omnifunc for Kubernetes YAML completions
-				vim.api.nvim_buf_set_option(0, "omnifunc", "v:lua.k8s_complete")
-			end
-		end,
-	})
+	-- Delegate completion setup (ghost text + omnifunc) to the completion module
+	completion.setup()
 end
 
 return M
