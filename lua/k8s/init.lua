@@ -61,8 +61,10 @@ local function list_k8s_resources()
 		col = 10,
 		style = "minimal",
 		border = "single",
-		winhighlight = "Normal:Normal,FloatBorder:NormalFloat",
 	})
+
+	-- Set the window highlight after creation
+	vim.api.nvim_win_set_option(win, "winhighlight", "Normal:Normal,FloatBorder:NormalFloat")
 
 	-- Set buffer name and make it readonly
 	vim.api.nvim_buf_set_name(buf, "K8s Resources")
@@ -91,4 +93,3 @@ function M.setup()
 end
 
 return M
-
