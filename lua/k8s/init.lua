@@ -60,7 +60,8 @@ local function list_k8s_resources()
     row = 5,
     col = 10,
     style = "minimal",
-    border = "single"
+    border = "single",
+    winhighlight = "Normal:Normal,FloatBorder:Comment"
   })
   
   -- Set buffer name and make it readonly
